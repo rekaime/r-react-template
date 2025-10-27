@@ -1,0 +1,8 @@
+set -e
+
+pnpm commitlint --edit "$1"
+
+if [ $? -ne 0 ]; then
+  echo "❌ 提交信息不符合规范 请使用格式 \"type: subject\""
+  exit 1
+fi
